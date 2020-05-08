@@ -1,0 +1,8 @@
+# apache config
+RUN systemctl start firewalld && \
+    firewall-cmd --state && \
+    firewall-cmd --permanent --add-service=http && \
+    firewall-cmd --reload
+
+# apache start
+RUN systemctl start httpd
